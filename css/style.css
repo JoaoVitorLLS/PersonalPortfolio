@@ -1,0 +1,730 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555555;
+}
+
+/* General styling code: */
+section {
+    padding: 100px;
+}
+
+section .title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+
+section .title::before {
+    background: #111111;
+    bottom: 0;
+    content: "";
+    height: 3px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 180px;
+}
+
+section .title::after {
+    background: #ffffff;
+    bottom: -8px;
+    color: #03045e;
+    font-size: 20px;
+    left: 50%;
+    padding: 0 5px;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.maxWidth {
+    margin: auto;
+    max-width: 1300px;
+    padding: 0 80px;
+}
+
+.aboutMe, .mySkills, .previousProjects, .contactMe, footer {
+    font-family: 'Poppins', sans-serif;
+}
+
+.aboutMe .aboutMeSectionContent, .mySkills .mySkillsSectionContent, .previousProjects .previousProjectsSectionContent,
+.contactMe .contactMeSectionContent {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Styling the navigation bar: */
+.navigationBar {
+    font-family: 'Ubuntu', sans-serif;
+    padding: 30px 0;
+    position: fixed;
+    transition: all 0.3s ease;
+    width: 100%;
+    z-index: 999;
+}
+
+.navigationBar.sticky {
+    background: #03045e;
+    padding: 15px 0;
+}
+
+.navigationBar .maxWidth {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigationBar .logo a {
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.navigationBar .logo a span {
+    color: #03045e;
+    transition: 0.3s all ease;
+}
+
+.navigationBar.sticky .logo a span {
+    color: #ffffff;
+}
+
+.navigationBar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navigationBar .menu li a {
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: 0.3s color ease;
+}
+
+.navigationBar .menu li a:hover {
+    color: #03045e;
+}
+
+.navigationBar.sticky .menu li a:hover {
+    color: #00b4d8;
+}
+
+/* Styling the navigation buttons: */
+.menuButton {
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+    font-size: 23px;
+}
+
+.backToTopButton {
+    background: #03045e;
+    border-bottom-width: 2px;
+    border-radius: 6px;
+    bottom: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 30px;
+    height: 45px;
+    line-height: 45px;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 42px;
+    z-index: 9999;
+}
+
+.backToTopButton:hover {
+    filter: brightness(80%);
+    transform: scale(1.15);
+}
+
+.backToTopButton.show {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Styling the "home" section: */
+.home {
+    background: url("https://birchtree.nyc3.digitaloceanspaces.com/images/wwdc18/dev-blue.png") center fixed no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    display: flex;
+    font-family: 'Ubuntu', sans-serif;
+    height: 100vh;
+    min-height: 500px;
+}
+
+.home .maxWidth {
+    display: flex;
+    width: 100%;
+}
+
+.home .maxWidth .row {
+    margin-right: 0;
+}
+
+.home .homeSectionContent .firstText {
+    font-size: 27px;
+}
+
+.home .homeSectionContent .secondText {
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+
+.home .homeSectionContent .thirdText {
+    font-size: 40px;
+    margin: 5px 0;
+}
+
+.home .homeSectionContent .thirdText #firstTypingEffect {
+    color: #03045e;
+    font-weight: 500;
+}
+
+.home .homeSectionContent #contactMeButton {
+    background: #03045e;
+    border: #03045e 2px solid;
+    border-radius: 6px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 20px;
+    padding: 12px 36px;
+    transition: all 0.3s ease;
+}
+
+.home .homeSectionContent #contactMeButton:hover {
+    background: none;
+    color: #03045e;
+}
+
+/* Styling the "About me" section: */
+.aboutMe .title::after {
+    content: "who i am";
+}
+
+.aboutMe .aboutMeSectionContent .left {
+    width: 45%;
+}
+
+.aboutMe .aboutMeSectionContent .left img {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.aboutMe .aboutMeSectionContent .right {
+    width: 55%;
+}
+
+.aboutMe .aboutMeSectionContent .right .text {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.aboutMe .aboutMeSectionContent .right .text span {
+    color: #03045e;
+}
+
+.aboutMe .aboutMeSectionContent .right p {
+    text-align: justify;
+}
+
+.aboutMe .aboutMeSectionContent .right a {
+    background: #03045e;
+    border: #03045e 2px solid;
+    border-radius: 6px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+}
+
+.aboutMe .aboutMeSectionContent .right a:hover {
+    background: none;
+    color: #03045e;
+}
+
+/* Styling the "My skills" section: */
+.mySkills {
+    background: #0077b6;
+    color: #ffffff;
+}
+
+.mySkills .title::after {
+    background: #0077b6;
+    content: "what i know";
+}
+
+.mySkills .mySkillsSectionContent .column {
+    width: calc(50% - 30px);
+}
+
+.mySkills .mySkillsSectionContent .left .text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.mySkills .mySkillsSectionContent .left p {
+    text-align: justify;
+}
+
+.mySkills .mySkillsSectionContent .left a {
+    background: #03045e;
+    border: #03045e 2px solid;
+    border-radius: 6px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+.mySkills .mySkillsSectionContent .left a:hover {
+    background: none;
+    color: #03045e;
+}
+
+.mySkills .mySkillsSectionContent .right .skillBars {
+    margin-bottom: 15px;
+}
+
+.mySkills .mySkillsSectionContent .right .information {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.mySkills .mySkillsSectionContent .right span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.mySkills .mySkillsSectionContent .right .line {
+    background: lightgrey;
+    height: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.mySkills .mySkillsSectionContent .right .line::before {
+    background: #03045e;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.mySkillsSectionContent .right .cSharp::before {
+    width: 75%;
+}
+
+.mySkillsSectionContent .right .css::before {
+    width: 50%;
+}
+
+.mySkillsSectionContent .right .hTML::before {
+    width: 50%;
+}
+
+.mySkillsSectionContent .right .java::before {
+    width: 80%;
+}
+
+.mySkillsSectionContent .right .python::before {
+    width: 65%;
+}
+
+/* Styling the "Previous projects" section: */
+.previousProjects {
+    background: #ffffff;
+    color: #03045e;
+}
+
+.previousProjects .title::before {
+    background: #111111;
+}
+
+.previousProjects .title::after {
+    background: #ffffff;
+    content: "my Github page";
+}
+
+.previousProjects .previousProjectsSectionContent .card {
+    background: #00b4d8;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 50px 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: calc(33% - 20px);
+}
+
+.previousProjects .previousProjectsSectionContent .emptyCard {
+    background: #ffffff;
+    color: #ffffff;
+}
+
+.previousProjects .previousProjectsSectionContent .card:hover {
+    background: #03045e;
+    color: #ffffff;
+    transform: scale(1.10);
+}
+
+.previousProjects .previousProjectsSectionContent .emptyCard:hover {
+    background: #ffffff;
+    color: #ffffff;
+}
+
+.previousProjects .previousProjectsSectionContent .card .box {
+    transition: all 0.3s ease;
+}
+
+.previousProjects .previousProjectsSectionContent .card:hover .box {
+    transform: scale(1.10);
+}
+
+.previousProjects .previousProjectsSectionContent .card .box i {
+    color: #03045e;
+    font-size: 50px;
+    transition: color 0.3s ease;
+}
+
+.previousProjects .previousProjectsSectionContent .card:hover .box i {
+    color: #fff;
+}
+
+.previousProjects .previousProjectsSectionContent .card .box .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+/* Styling the "Contact me" section: */
+.contactMe {
+    background: #0077b6;
+    color: #ffffff;
+}
+
+.contactMe .contactMeSectionContent .column {
+    width: calc(50% - 30px);
+}
+
+.contactMe .contactMeSectionContent .column .text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contactMe .contactMeSectionContent .left p {
+    text-align: justify;
+}
+
+.contactMe .contactMeSectionContent .left .icons {
+    margin: 10px 0;
+}
+
+.contactMe .contactMeSectionContent .row {
+    align-items: center;
+    display: flex;
+    height: 65px;
+}
+
+.contactMe .contactMeSectionContent .row .information {
+    margin-left: 30px;
+}
+
+.contactMe .contactMeSectionContent .row i {
+    color: #03045e;
+    font-size: 25px;
+}
+
+.contactMe .contactMeSectionContent .information .head {
+    font-weight: 500;
+}
+
+.contactMe .contactMeSectionContent .information .sub-title {
+    color: #03045e;
+    font-size: large;
+}
+
+.contactMe .contactMeSectionContent .information .sub-title:hover {
+    font-size: larger;
+}
+
+.contactMe .right form .fields {
+    display: flex;
+}
+
+.contactMe .right form .field, .contactMe .right form .fields .field {
+    height: 45px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.contactMe .right form .textarea {
+    height: 80px;
+    width: 100%;
+}
+
+.contactMe .right form .name {
+    margin-right: 10px;
+}
+
+.contactMe .right form .field input, .contactMe .right form .textarea textarea {
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    height: 100%;
+    outline: none;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.contactMe .right form .field input:focus, .contactMe .right form .textarea textarea:focus {
+    border-color: #b3b3b3;
+}
+
+.contactMe .right form .button-area {
+    align-items: center;
+    display: flex;
+}
+
+.contactMe .right form .textarea textarea {
+    padding-top: 10px;
+    resize: none;
+}
+
+.contactMe .title::after {
+    background: #0077b6;
+    content: "get in touch";
+}
+
+.right form .button-area button {
+    background: #03045e;
+    border: #03045e 2px solid;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    height: 45px;
+    flex-wrap: nowrap;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 160px !important;
+}
+
+.right form .button-area button:hover {
+    background: none;
+    color: #03045e;
+}
+
+/* Styling the footer: */
+footer {
+    background: #111111;
+    color: #ffffff;
+    padding: 15px 23px;
+    text-align: center;
+}
+
+/* Responsive media: */
+@media (max-width: 1104px) {
+    .aboutMe .aboutMeSectionContent .left img {
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .maxWidth {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 947px) {
+    .menuButton {
+        display: block;
+        z-index: 999;
+    }
+
+    .menuButton i.active:before {
+        content: "\f00d";
+    }
+
+    .navigationBar .menu {
+        background: #111111;
+        height: 100vh;
+        left: -100%;
+        padding-top: 80px;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+
+    .navigationBar .menu.active {
+        left: 0;
+    }
+
+    .navigationBar .menu li {
+        display: block;
+    }
+
+    .navigationBar .menu li a {
+        display: inline-block;
+        font-size: 25px;
+        margin: 20px 0;
+    }
+
+    .home .homeSectionContent .secondText {
+        font-size: 70px;
+    }
+
+    .home .homeSectionContent .thirdText {
+        font-size: 35px;
+    }
+
+    .home .homeSectionContent a {
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+
+    .maxWidth {
+        max-width: 930px;
+    }
+
+    .aboutMe .aboutMeSectionContent .column {
+        width: 100%;
+    }
+
+    .aboutMe .aboutMeSectionContent .left {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+
+    .aboutMe .aboutMeSectionContent .right {
+        flex: 100%;
+    }
+
+    .previousProjects .previousProjectsSectionContent .card {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+
+    .mySkills .mySkillsSectionContent .column, .contactMe .contactMeSectionContent .column {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 690px) {
+    .maxWidth {
+        padding: 0 23px;
+    }
+
+    .home .homeSectionContent .secondText {
+        font-size: 60px;
+    }
+
+    .home .homeSectionContent .thirdText {
+        font-size: 32px;
+    }
+
+    .home .homeSectionContent a {
+        font-size: 20px;
+    }
+
+    .previousProjects .previousProjectsSectionContent .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .homeSectionContent .secondText {
+        font-size: 50px;
+    }
+
+    .home .homeSectionContent .thirdText {
+        font-size: 27px;
+    }
+
+    .aboutMe .aboutMeSectionContent .right .text, .mySkills .mySkillsSectionContent .left .text {
+        font-size: 19px;
+    }
+
+    .contactMe .right form .fields {
+        flex-direction: column;
+    }
+
+    .contactMe .right form .name, .contactMe .right form .email {
+        margin: 0;
+    }
+
+    .right form .error-box {
+        width: 150px;
+    }
+
+    .backToTopButton {
+        bottom: 15px;
+        font-size: 23px;
+        height: 38px;
+        line-height: 38px;
+        right: 15px;
+        width: 35px;
+    }
+}
